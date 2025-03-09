@@ -1,3 +1,111 @@
+# Managing Pods
+1. kubectl run <pod-name> --image=<image> --port=<port>
+2. kubectl get pods
+3. kubectl describe pod <pod-name>
+4. kubectl delete pod <pod-name>
+
+# Managing Deployments
+5. kubectl create deployment <deployment-name> --image=<image>
+6. kubectl get deployments
+7. kubectl describe deployment <deployment-name>
+8. kubectl scale deployment <deployment-name> --replicas=<number-of-replicas>
+9. kubectl set image deployment/<deployment-name> <container-name>=<new-image>
+10. kubectl delete deployment <deployment-name>
+
+# Managing Services
+11. kubectl expose deployment <deployment-name> --type=<service-type> --port=<port> --target-port=<target-port>
+12. kubectl get services
+13. kubectl describe service <service-name>
+14. kubectl delete service <service-name>
+
+# Managing ConfigMaps and Secrets
+15. kubectl create configmap <configmap-name> --from-literal=<key>=<value>
+16. kubectl create configmap <configmap-name> --from-file=<file-path>
+17. kubectl get configmaps
+18. kubectl describe configmap <configmap-name>
+19. kubectl create secret generic <secret-name> --from-literal=<key>=<value>
+20. kubectl create secret generic <secret-name> --from-file=<file-path>
+21. kubectl get secrets
+22. kubectl describe secret <secret-name>
+
+# Managing Namespaces
+23. kubectl create namespace <namespace-name>
+24. kubectl get namespaces
+25. kubectl describe namespace <namespace-name>
+26. kubectl delete namespace <namespace-name>
+
+# Managing Volumes and Persistent Volume Claims
+27. kubectl get pv
+28. kubectl get pvc
+
+# Managing ReplicaSets
+29. kubectl get replicasets
+30. kubectl describe replicaset <replicaset-name>
+31. kubectl delete replicaset <replicaset-name>
+
+# Logs and Debugging
+32. kubectl logs <pod-name>
+33. kubectl logs <pod-name> -c <container-name>
+34. kubectl exec <pod-name> -- <command>
+35. kubectl exec -it <pod-name> -- /bin/bash
+
+# Managing Jobs and CronJobs
+36. kubectl create job <job-name> --image=<image>
+37. kubectl get jobs
+38. kubectl describe job <job-name>
+39. kubectl delete job <job-name>
+40. kubectl create cronjob <cronjob-name> --image=<image> --schedule="<cron-schedule>"
+41. kubectl get cronjobs
+42. kubectl describe cronjob <cronjob-name>
+43. kubectl delete cronjob <cronjob-name>
+
+# Managing StatefulSets
+44. kubectl get statefulsets
+45. kubectl describe statefulset <statefulset-name>
+46. kubectl delete statefulset <statefulset-name>
+
+# Managing DaemonSets
+47. kubectl get daemonsets
+48. kubectl describe daemonset <daemonset-name>
+49. kubectl delete daemonset <daemonset-name>
+
+# Cluster Management and Configuration
+50. kubectl cluster-info
+51. kubectl config view
+52. kubectl config set-context --current --namespace=<namespace-name>
+53. kubectl config current-context
+
+# Apply and Edit Resources
+54. kubectl apply -f <file.yaml>
+55. kubectl edit <resource-type> <resource-name>
+
+# Resource Management and Cleanup
+56. kubectl delete -f <file.yaml>
+57. kubectl delete <resource-type> --selector <label>=<value>
+
+# Using Labels and Annotations
+58. kubectl label <resource-type> <resource-name> <key>=<value>
+59. kubectl label <resource-type> <resource-name> <key>-
+60. kubectl annotate <resource-type> <resource-name> <key>=<value>
+
+# Debugging and Troubleshooting
+61. kubectl port-forward <pod-name> <local-port>:<pod-port>
+62. kubectl get events
+63. kubectl top pod <pod-name>
+
+# Advanced Filtering and Querying
+64. kubectl get <resource-type> --selector <label>=<value>
+65. kubectl get <resource-type> <resource-name> -o jsonpath='{.status.phase}'
+
+
+
+
+
+
+
+
+
+
 Basic Commands (Beginner):
   create          Create a resource from a file or from stdin
   expose          Take a replication controller, service, deployment or pod and expose it as a new Kubernetes service
